@@ -1,3 +1,6 @@
 my:
   greeting:
     hello this config was redacted directly on github
+server:
+  port:
+      8082
