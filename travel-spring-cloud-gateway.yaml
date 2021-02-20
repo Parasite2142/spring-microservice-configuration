@@ -15,7 +15,7 @@ spring:
         - id: thirdRoute
           uri: http://localhost:8083/
           predicates:
-            - Path=/test/**, /api/test/**
+            - Path=/test/**, /api/test/**, /whatever/**
   security:
     oauth2:
       client:
