@@ -20,6 +20,10 @@ spring:
           uri: https://google.com
           predicates:
             - Path=/google/**
+        - id: fifthRoute
+          uri: http://localhost:8084/
+          predicates:
+            - Path=/api/normal/**, /normal/**
   security:
     oauth2:
       client:
