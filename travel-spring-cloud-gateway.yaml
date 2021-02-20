@@ -1,0 +1,32 @@
+spring:
+  cloud:
+    gateway:
+      default-filters:
+        - TokenRelay
+      routes:
+        - id: firstRoute
+          uri: http://localhost:8081/
+          predicates:
+            - Path=/any/**
+        - id: secondRoute
+          uri: http://localhost:8082/
+          predicates:
+            - Path=/dev/**
+        - id: thirdRoute
+          uri: http://localhost:8083/
+          predicates:
+            - Path=/test/**
+        - id: apiRoute
+          uri: http://localhost:8083/
+          predicates:
+  security:
+    oauth2:
+      client:
+        provider:
+          keycloak:
+            issuer-uri: http://localhost:8180/auth/realms/TestRealm
+            user-name-attribute: preferred_username
+        registration:
+          keycloak:
+            client-id: GateWayClient
+            client-secret: ccd47a5a-b115-42c6-9d7b-5e20188d2768
