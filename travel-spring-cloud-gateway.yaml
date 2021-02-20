@@ -26,6 +26,9 @@ spring:
             - Path=/api/normal/**, /normal/**
   security:
     oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8180/auth/realms/TestRealm
       client:
         provider:
           keycloak:
