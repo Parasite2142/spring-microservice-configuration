@@ -16,6 +16,10 @@ spring:
           uri: http://localhost:8083/
           predicates:
             - Path=/test/**, /api/test/**
+        - id: fourthRoute
+          uri: https://google.com
+          predicates:
+            - Path=/google/**
   security:
     oauth2:
       client:
