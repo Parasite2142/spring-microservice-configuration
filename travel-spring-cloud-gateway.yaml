@@ -4,26 +4,14 @@ spring:
       default-filters:
         - TokenRelay
       routes:
-        - id: firstRoute
-          uri: http://localhost:8081/
-          predicates:
-            - Path=/any/**
-        - id: secondRoute
+        - id: f1
           uri: http://localhost:8082/
           predicates:
-            - Path=/dev/**
-        - id: thirdRoute
-          uri: http://localhost:8083/
-          predicates:
-            - Path=/test/**, /api/test/**
-        - id: fourthRoute
-          uri: https://google.com
-          predicates:
-            - Path=/google/**
-        - id: fifthRoute
+            - Path=/something/**, /something/api/**
+        - id: f2
           uri: http://localhost:8084/
           predicates:
-            - Path=/api/normal/**, /normal/**
+            - Path=/api/normal/**, /normal/**, /normal/api**
   security:
     oauth2:
       resourceserver:
