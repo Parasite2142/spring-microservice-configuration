@@ -12,6 +12,10 @@ spring:
           uri: http://localhost:8084/
           predicates:
             - Path=/api/normal/**, /normal/**, /normal/api**
+        - id: f3
+          uri: https://google.com
+          predicates:
+            - Path=/**
   security:
     oauth2:
       resourceserver:
